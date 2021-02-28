@@ -21,7 +21,7 @@ public class Project {
         int z=112345;
         s=z;
         System.out.println(""+x+y+s);
-        System.out.println("kira is here (:");
+        System.out.println("kira is here (");
     }
     
 }
