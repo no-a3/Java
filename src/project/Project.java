@@ -19,7 +19,7 @@ public class Project {
      * @param args the command line arguments
      */
     
-    public static final String ANSI_RED = "\u001B[31m"; // green color 
+    public static final String ANSI_RED = "\u001B[31m"; // red color 
 
     public static void main(String[] args) {
         Headers(); //headers
