@@ -18,10 +18,14 @@ public class Project {
     /**
      * @param args the command line arguments
      */
-    
+    public static final String RESET = "\033[0m";
     public static final String ANSI_RED = "\u001B[31m"; // red color 
 
     public static void main(String[] args) {
+        System.out.print("\033[H\033[2J"); System.out.flush();   //rest console 
+        
+        // try code
+        try{
         // infiniteLoop
         for(;;) {
             for (int i = 0; i == 0; i++) {
@@ -40,7 +44,8 @@ public class Project {
             // input value
             String cmd;
             int age;
-            System.out.print(ANSI_RED + "Enter command :");
+
+            System.out.print(ANSI_RED + "Enter command : ");
             cmd = commandObj.nextLine();
         
             // validation age for get just number 
@@ -56,6 +61,7 @@ public class Project {
             // end validation
             if (age != 0) {
                 if (age > 7) {
+                    
                     switch (cmd) {
                         case "-y":
                             System.out.print(ANSI_RED + "your age in years is ");
@@ -79,11 +85,14 @@ public class Project {
                 System.out.println("your age can't be 0");}
         
         } // end infiniteLoop
+    } //end try 
+    // catch NoSuchElementException and print bye and rest console color
+    catch (java.util.NoSuchElementException e) {System.out.println(RESET+ "\n\nbye" + RESET);}
     }
 
     public static void Headers() {
         
-        System.out.println("""
+        System.out.println(ANSI_RED + """
     
          #    #       #     #    #    #     # ####### ####### ####### 
         # #   #       #     #   # #   ##    # #     # #     # #       
@@ -91,7 +100,7 @@ public class Project {
       #     # #       ####### #     # #  #  # #     # #     # #####   
       ####### #       #     # ####### #   # # #     # #     # #       
       #     # #       #     # #     # #    ## #     # #     # #       
-      #     # ####### #     # #     # #     # ####### ####### #""");
+      #     # ####### #     # #     # #     # ####### ####### #\n\n""");
     
     }
         
